@@ -18,3 +18,13 @@ class Config(object):
     SESSION_USE_SIGHER = True
     SESSION_REDIS = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT)
     PERMANENT_SESSION_LIFETIME = 86400
+
+
+class DevelopementConfig(Config):
+    '''开发模式显得配置'''
+    DEBUG = True
+
+
+class ProdutionConfig(Config):
+    '''生产模式下的配置'''
+    pass
