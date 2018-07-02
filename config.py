@@ -19,10 +19,18 @@ class Config(object):
     SESSION_REDIS = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT)
     PERMANENT_SESSION_LIFETIME = 86400
 
+    # 定义配置字典
+    config = {
+        "developement": DevelopementConfig,
+        "prodution": ProdutionConfig
+
+    }
+
 
 class DevelopementConfig(Config):
     '''开发模式显得配置'''
     DEBUG = True
+
 
 
 class ProdutionConfig(Config):
